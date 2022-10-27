@@ -1,4 +1,3 @@
-#!/usr/bin/python2.7
 # -*- coding: utf-8 -*-
 
 # autores: Óscar Vázquez Blanco y Diego Vázquez Blanco
@@ -98,7 +97,7 @@ def nivel_0(claves_alfabeto, caracteres):
 	for a in range(caracteres):
 		# imprime sin espacios
 		sys.stdout.write(random.choice(claves_alfabeto))
-	print ''
+	print ('')
 
 
 # Genera un texto a partir de los valores del alfabeto
@@ -112,7 +111,7 @@ def nivel_1(texto, claves_alfabeto, valores_alfabeto, caracteres):
 			if aux >= aleatorio:
 				sys.stdout.write(claves_alfabeto[j])
 				break
-	print ''
+	print ('')
 
 
 # Genera un texto aleatorio a partir del caracter anterior al que se escribe
@@ -141,7 +140,7 @@ def nivel_2(texto, caracteres):
 		sys.stdout.write(letra)
 		char_anterior = letra
 
-	print ''
+	print ('')
 
 
 # Genera un texto aleatorio a partir de los n caracteres anteriores al que se escribe
@@ -164,13 +163,13 @@ def nivel_n(texto, caracteres, nivel):
 		sys.stdout.write(letra)
 		caract = caract[1:] + letra
 	
-	print ''
+	print ('')
 
 
 # Programa principal
 def main():
 
-	fichero = raw_input('Introduzca nombre del fichero: ')
+	fichero = input('Introduzca nombre del fichero: ')
 
 	texto = leer_fichero(fichero)
 
@@ -181,10 +180,10 @@ def main():
 
 	while( m == True ):
 
-		nivel = input('Nivel: ')
-		caracteres = input('Tamaño texto generado: ')
+		nivel = int(input('Nivel: '))
+		caracteres = int(input('Tamaño texto generado: '))
 		if (nivel > caracteres) or (nivel > len(texto)-1):
-			print 'El nivel debe ser menor que el tamaño del texto generado o longitud del texto fuente.\n'
+			print ('El nivel debe ser menor que el tamaño del texto generado o longitud del texto fuente.\n')
 		else:
 			m = False
 
